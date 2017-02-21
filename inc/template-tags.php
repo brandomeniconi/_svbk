@@ -121,21 +121,6 @@ function landingfactory_category_transient_flusher() {
 add_action( 'edit_category', 'landingfactory_category_transient_flusher' );
 add_action( 'save_post',     'landingfactory_category_transient_flusher' );
 
-if ( ! function_exists( 'landingfactory_the_custom_logo' ) ) :
-/**
- * Displays the optional custom logo.
- *
- * Does nothing if the custom logo is not available.
- *
- * @todo: Remove this function when WordPress 4.7 is released.
- */
-function landingfactory_the_custom_logo() {
-	if ( function_exists( 'the_custom_logo' ) ) {
-		the_custom_logo();
-	}
-}
-endif;
-
 //ACF functions fallbacks
 if(!function_exists('get_field')){
 	function get_field($key, $post_id=null){

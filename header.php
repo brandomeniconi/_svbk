@@ -24,28 +24,21 @@
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'landingfactory' ); ?></a>
 	<header id="masthead" class="site-header" role="banner">
-		<div class="site-branding">
-			<?php landingfactory_the_custom_logo(); ?>
-			<?php
-			if ( is_front_page() && is_home() ) : ?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-			<?php else : ?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-			<?php
-			endif;
 
-			$description = get_bloginfo( 'description', 'display' );
-			if ( $description || is_customize_preview() ) : ?>
-				<p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
-			<?php
-			endif; ?>
-		</div><!-- .site-branding -->
-		<?php if(has_nav_menu('menu-1')): ?>
-		<nav id="site-navigation" class="main-navigation" role="navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><span class="screen-reader-text"><?php esc_html_e( 'Primary Menu', 'landingfactory' ); ?></span></button>
-			<?php wp_nav_menu( array( 'theme_location' => 'menu-1', 'menu_id' => 'primary-menu' ) ); ?>
-		</nav><!-- #site-navigation -->
-		<?php endif; ?>
+		<?php if(is_front_page()){ get_template_part( 'template-parts/header/header', 'image' );	}	?>
+
+		<div id="site-header-content">
+			<?php get_template_part( 'template-parts/header/site', 'branding' ); ?>
+
+			<nav id="site-navigation" class="main-navigation" role="navigation">
+				<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><span class="screen-reader-text"><?php esc_html_e( 'Primary Menu', '_svbk' ); ?></span></button>
+				<?php wp_nav_menu( array( 'theme_location' => 'menu-1', 'menu_id' => 'primary-menu' ) ); ?>
+			</nav><!-- #site-navigation -->
+			
+			<button class="search-toggle"><span class="screen-reader-text"><?php _e( 'Toggle Search', 'cavatorta' ) ?></span></button>
+			<?php echo get_search_form(); ?>
+
+		</div>
 	</header><!-- #masthead -->
 
 	<div id="content" class="site-content">

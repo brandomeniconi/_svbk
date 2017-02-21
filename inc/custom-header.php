@@ -18,12 +18,13 @@
  */
 function landingfactory_custom_header_setup() {
 	add_theme_support( 'custom-header', apply_filters( 'landingfactory_custom_header_args', array(
+		'video' 				 => true,
 		'default-image'          => '',
 		'default-text-color'     => '000000',
 		'width'                  => 1980,
 		'height'                 => 1200,
 		'flex-height'            => true,
-		'flex-width'            =>	true,
+		'flex-width'             =>	true,
 		'wp-head-callback'       => 'landingfactory_header_style',
 	) ) );
 }

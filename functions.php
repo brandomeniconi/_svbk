@@ -95,10 +95,10 @@ function landingfactory_setup() {
 	) ) );
 
 	add_editor_style();
-	
+
 	// Add theme support for selective refresh for widgets.
 	add_theme_support( 'customize-selective-refresh-widgets' );
-	
+
 	if(class_exists('AMP')){
 		AMP::init();
 	}
@@ -144,7 +144,12 @@ function landingfactory_scripts() {
 
 	wp_enqueue_script( 'landingfactory-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 	wp_enqueue_script( 'landingfactory-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
-	wp_enqueue_script( 'ufficiobrevetti-theme', get_template_directory_uri() . '/js/theme.js', array(), '20170120', true );
+	wp_enqueue_script( 'landingfactory-theme', get_template_directory_uri() . '/js/theme.js', array(), '20170120', true );
+
+	if(get_theme_mod('sticky_header')){
+		wp_enqueue_script( 'waypoints' );
+		wp_add_inline_script( 'waypoints', 'var sticky = new Waypoint.Sticky({ element: document.getElementById(\'site-header-content\') })' );
+	}
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );

@@ -15,9 +15,35 @@ function landingfactory_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
 
+	//Header
+	$wp_customize->get_section( 'header_image' )->title = __('Header', '_svbk');
+
+	$wp_customize->add_setting( 'sticky_header', array(
+	  'default' => false,
+	));
+
+	$wp_customize->add_control( 'sticky_header', array(
+	  'label' => __( 'Sticky Header', '_svbk' ),
+	  'description' => __( 'Makes the header stay on top of page after scroll', '_svbk' ),
+	  'section' => 'header_image',
+	  'type' => 'checkbox',
+	));
+
+	$wp_customize->add_setting( 'header_cycle_images', array(
+	  'default' => false,
+	));
+
+	$wp_customize->add_control( 'header_cycle_images', array(
+	  'label' => __( 'Fade header images', '_svbk' ),
+	  'description' => __( 'Cycle through all header images with a CSS fade effect', '_svbk' ),
+	  'section' => 'header_image',
+	  'type' => 'checkbox',
+	));
+
+	//Archives
 	$wp_customize->add_section( 'archives', array(
-	  'title' => __( 'Archives', 'studiolegalemauro' ),
-	  'description' => __( 'Archive Customizations', 'studiolegalemauro' ),
+	  'title' => __( 'Archives', '_svbk' ),
+	  'description' => __( 'Archive Customizations', '_svbk' ),
 	  'priority' => 160,
 	) );
 
@@ -47,7 +73,7 @@ function landingfactory_customize_register( $wp_customize ) {
 
 	}
 
-	//
+	//Footer setings
 	$wp_customize->add_setting( 'footer_logo' );
 	$wp_customize->add_section( 'footer', array(
 	  'title' => __( 'Footer', 'landingfactory' ),
@@ -60,6 +86,27 @@ function landingfactory_customize_register( $wp_customize ) {
 	  'section' => 'footer',
 	  'mime_type' => 'image',
 	) ) );
+
+	$wp_customize->add_setting( 'fixed_footer_bar_content', array(
+		'sanitize_callback'=>'wp_kses_post',
+	));
+	$wp_customize->add_setting( 'fixed_footer_bar', array(
+	  'default' => false,
+	));
+
+	$wp_customize->add_control( 'fixed_footer_bar_content', array(
+	  'label' => __( 'Fixed Footer Bar', 'studiolegalemauro' ),
+	  'description' => __( 'Fixed Footer Bar Content (supports HTML and shortcode)', 'studiolegalemauro' ),
+	  'section' => 'footer',
+	  'type' => 'textarea',
+	));
+
+	$wp_customize->add_control( 'fixed_footer_bar', array(
+	  'label' => __( 'Show Fixed Footer Bar', 'studiolegalemauro' ),
+	  'section' => 'footer',
+	  'type' => 'checkbox',
+
+	));
 
 }
 add_action( 'customize_register', 'landingfactory_customize_register' );
