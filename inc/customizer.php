@@ -1,8 +1,8 @@
 <?php
 /**
- *'_svbk'Theme Customizer
+ *'landingfactory'Theme Customizer
  *
- * @package _svbk
+ * @package landingfactory
  */
 
 /**
@@ -10,7 +10,7 @@
  *
  * @param WP_Customize_Manager $wp_customize Theme Customizer object.
  */
-function _svbk_customize_register( $wp_customize ) {
+function landingfactory_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
@@ -34,13 +34,13 @@ function _svbk_customize_register( $wp_customize ) {
 		));
 
 		$wp_customize->add_control( new WP_Customize_Media_Control( $wp_customize, "archive_{$cpt->name}_image", array(
-		  'label' => sprintf(__( '%s Archive Image', '_svbk' ), $cpt->label),
+		  'label' => sprintf(__( '%s Archive Image', 'landingfactory' ), $cpt->label),
 		  'section' => 'archives',
 		  'mime_type' => 'image',
 		) ) );
 
 		$wp_customize->add_control( "archive_{$cpt->name}_description", array(
-		  'label' =>  sprintf(__( '%s Archive Description', '_svbk' ), $cpt->label),
+		  'label' =>  sprintf(__( '%s Archive Description', 'landingfactory' ), $cpt->label),
 		  'type' => 'textarea',
 		  'section' => 'archives',
 		) );
@@ -50,24 +50,24 @@ function _svbk_customize_register( $wp_customize ) {
 	//
 	$wp_customize->add_setting( 'footer_logo' );
 	$wp_customize->add_section( 'footer', array(
-	  'title' => __( 'Footer', '_svbk' ),
-	  'description' => __( 'Footer Settings', '_svbk' ),
+	  'title' => __( 'Footer', 'landingfactory' ),
+	  'description' => __( 'Footer Settings', 'landingfactory' ),
 	  'priority' => 160,
 	) );
 
 	$wp_customize->add_control( new WP_Customize_Media_Control( $wp_customize, 'footer_logo', array(
-	  'label' => __( 'Footer Logo', '_svbk' ),
+	  'label' => __( 'Footer Logo', 'landingfactory' ),
 	  'section' => 'footer',
 	  'mime_type' => 'image',
 	) ) );
 
 }
-add_action( 'customize_register', '_svbk_customize_register' );
+add_action( 'customize_register', 'landingfactory_customize_register' );
 
 /**
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
  */
-function _svbk_customize_preview_js() {
-	wp_enqueue_script( '_svbk_customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '20151215', true );
+function landingfactory_customize_preview_js() {
+	wp_enqueue_script( 'landingfactory_customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '20151215', true );
 }
-add_action( 'customize_preview_init', '_svbk_customize_preview_js' );
+add_action( 'customize_preview_init', 'landingfactory_customize_preview_js' );

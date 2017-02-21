@@ -4,7 +4,7 @@
 
 return array(
     'version' =>'1.2',
-    'textdomain' => '_svbk',
+    'textdomain' => 'landingfactory',
     'contact'=> [
         'company_name' => '[Company Name]',
         'address' => '[Company Address]',

@@ -6,7 +6,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package _svbk
+ * @package landingfactory
  */
 
 ?>
@@ -21,7 +21,7 @@
 		<?php endif ?>
 
 		<div id="company-info" class="footer-area">
-			<h3><?php _e('Headquarters', '_svbk'); ?></h3>
+			<h3><?php _e('Headquarters', 'landingfactory'); ?></h3>
 			<span class="contact-address"><?php bloginfo('contact_address'); ?></span><br/>
 			<span class="contact-cap"><?php bloginfo('contact_cap'); ?></span>
 			<span class="contact-city"><?php bloginfo('contact_city'); ?></span><br/>
@@ -31,7 +31,7 @@
 		<div id="legal" class="footer-area sub-footer">
 			<span class="copyright-notice">&copy; 2016</span>
 			<span id="privacy-policy" class="privacy-link"><?php echo do_shortcode('[privacy-link]Privacy Policy[/privacy-link]'); ?></span>
-			<span id="credits" class="made-by"><?php printf(__('Made with passion by %s','_svbk'), '<a target="_blank" href="http://www.silverbackstudio.it">Silverback Studio</a>') ; ?></span>
+			<span id="credits" class="made-by"><?php printf(__('Made with passion by %s','landingfactory'), '<a target="_blank" href="http://www.silverbackstudio.it">Silverback Studio</a>') ; ?></span>
 		</div>
 
 	</footer><!-- #colophon -->

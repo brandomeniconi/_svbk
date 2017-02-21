@@ -1,6 +1,6 @@
 {
-    "name": "svbk/_svbk",
-    "description": "Silverback Starter Theme",
+    "name": "svbk/landingfactory",
+    "description": "Silverback Landing Factory Theme",
     "type": "wordpress-theme",
     "license": "GPL",
     "authors": [
@@ -24,11 +24,11 @@
         }
     ],
     "require": {
-        "silverbackstudio/wp-shortcakes": "dev-master",
+        "silverbackstudio/wp-shortcakes": "v2.x-dev",
         "silverbackstudio/wp-themehelper": "dev-master",
         "silverbackstudio/wp-widgets": "dev-master"
     },
     "autoload": {
-        "psr-4": {"Svbk\\WP\\Themes\\_svbk\\": "inc/"}
+        "psr-4": {"Svbk\\WP\\Themes\\landingfactory\\": "inc/"}
     }
 }

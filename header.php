@@ -6,7 +6,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package _svbk
+ * @package landingfactory
  */
 
 ?><!DOCTYPE html>
@@ -22,10 +22,10 @@
 <body <?php body_class(); ?>>
 <?php do_action('after_body_tag'); ?>
 <div id="page" class="site">
-	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', '_svbk' ); ?></a>
+	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'landingfactory' ); ?></a>
 	<header id="masthead" class="site-header" role="banner">
 		<div class="site-branding">
-			<?php _svbk_the_custom_logo(); ?>
+			<?php landingfactory_the_custom_logo(); ?>
 			<?php
 			if ( is_front_page() && is_home() ) : ?>
 				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
@@ -40,11 +40,12 @@
 			<?php
 			endif; ?>
 		</div><!-- .site-branding -->
-
+		<?php if(has_nav_menu('menu-1')): ?>
 		<nav id="site-navigation" class="main-navigation" role="navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><span class="screen-reader-text"><?php esc_html_e( 'Primary Menu', '_svbk' ); ?></span></button>
+			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><span class="screen-reader-text"><?php esc_html_e( 'Primary Menu', 'landingfactory' ); ?></span></button>
 			<?php wp_nav_menu( array( 'theme_location' => 'menu-1', 'menu_id' => 'primary-menu' ) ); ?>
 		</nav><!-- #site-navigation -->
+		<?php endif; ?>
 	</header><!-- #masthead -->
 
 	<div id="content" class="site-content">

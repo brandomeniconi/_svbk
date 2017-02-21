@@ -1,10 +1,10 @@
 <?php
 /**
- *'_svbk'functions and definitions
+ *'landingfactory'functions and definitions
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package _svbk
+ * @package landingfactory
  */
 
 use \Svbk\WP\Helpers\Theme as ThemeHelper;
@@ -19,7 +19,7 @@ if(class_exists('ThemeHelper')){
 	ThemeHelper::init()->all();
 }
 
-if ( ! function_exists( '_svbk_setup' ) ) :
+if ( ! function_exists( 'landingfactory_setup' ) ) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.
  *
@@ -27,14 +27,14 @@ if ( ! function_exists( '_svbk_setup' ) ) :
  * runs before the init hook. The init hook is too late for some features, such
  * as indicating support for post thumbnails.
  */
-function _svbk_setup() {
+function landingfactory_setup() {
 	/*
 	 * Make theme available for translation.
 	 * Translations can be filed in the /languages/ directory.
-	 * If you're building a theme based on _svbk, use a find and replace
-	 * to change'_svbk'to the name of your theme in all the template files.
+	 * If you're building a theme based on landingfactory, use a find and replace
+	 * to change'landingfactory'to the name of your theme in all the template files.
 	 */
-	load_theme_textdomain( _svbk, get_template_directory() . '/languages' );
+	load_theme_textdomain( 'landingfactory', get_template_directory() . '/languages' );
 
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
@@ -50,8 +50,8 @@ function _svbk_setup() {
 	/*
 	 * Enable support for site logo.
 	 */
-	add_image_size( '_svbk-logo', 500, 500 );
-	add_theme_support( 'site-logo', array( 'size' => '_svbk-logo' ) );
+	add_image_size( 'landingfactory-logo', 500, 500 );
+	add_theme_support( 'site-logo', array( 'size' => 'landingfactory-logo' ) );
 
 	/*
 	 * Enable support for Post Thumbnails on posts and pages.
@@ -62,8 +62,8 @@ function _svbk_setup() {
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
-		'menu-1' => esc_html__( 'Primary', '_svbk' ),
-		'menu-404' => esc_html__( 'Not Found (404) Page', '_svbk' ),
+		'menu-1' => esc_html__( 'Primary', 'landingfactory' ),
+		'menu-404' => esc_html__( 'Not Found (404) Page', 'landingfactory' ),
 	) );
 
 	/*
@@ -89,7 +89,7 @@ function _svbk_setup() {
 	) );
 
 	// Set up the WordPress core custom background feature.
-	add_theme_support( 'custom-background', apply_filters( '_svbk_custom_background_args', array(
+	add_theme_support( 'custom-background', apply_filters( 'landingfactory_custom_background_args', array(
 		'default-color' => 'ffffff',
 		'default-image' => '',
 	) ) );
@@ -104,7 +104,7 @@ function _svbk_setup() {
 	}
 }
 endif;
-add_action( 'after_setup_theme', '_svbk_setup' );
+add_action( 'after_setup_theme', 'landingfactory_setup' );
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
@@ -113,52 +113,52 @@ add_action( 'after_setup_theme', '_svbk_setup' );
  *
  * @global int $content_width
  */
-function _svbk_content_width() {
-	$GLOBALS['content_width'] = apply_filters( '_svbk_content_width', 640 );
+function landingfactory_content_width() {
+	$GLOBALS['content_width'] = apply_filters( 'landingfactory_content_width', 640 );
 }
-add_action( 'after_setup_theme', '_svbk_content_width', 0 );
+add_action( 'after_setup_theme', 'landingfactory_content_width', 0 );
 
 /**
  * Register widget area.
  *
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
-function _svbk_widgets_init() {
+function landingfactory_widgets_init() {
 	register_sidebar( array(
-		'name'          => esc_html__( 'Sidebar','_svbk'),
+		'name'          => esc_html__( 'Sidebar','landingfactory'),
 		'id'            => 'sidebar-1',
-		'description'   => esc_html__( 'Add widgets here.','_svbk'),
+		'description'   => esc_html__( 'Add widgets here.','landingfactory'),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
 	) );
 }
-add_action( 'widgets_init', '_svbk_widgets_init' );
+add_action( 'widgets_init', 'landingfactory_widgets_init' );
 
 /**
  * Enqueue scripts and styles.
  */
-function _svbk_scripts() {
-	wp_enqueue_style( '_svbk-style', get_stylesheet_uri() );
+function landingfactory_scripts() {
+	wp_enqueue_style( 'landingfactory-style', get_stylesheet_uri() );
 
-	wp_enqueue_script( '_svbk-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
-	wp_enqueue_script( '_svbk-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
+	wp_enqueue_script( 'landingfactory-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
+	wp_enqueue_script( 'landingfactory-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 	wp_enqueue_script( 'ufficiobrevetti-theme', get_template_directory_uri() . '/js/theme.js', array(), '20170120', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
-add_action( 'wp_enqueue_scripts', '_svbk_scripts' );
+add_action( 'wp_enqueue_scripts', 'landingfactory_scripts' );
 
 
-function _svbk_max_srcset_image_width($size){
+function landingfactory_max_srcset_image_width($size){
 	return 2900;
 }
-add_filter( 'max_srcset_image_width', '_svbk_max_srcset_image_width');
+add_filter( 'max_srcset_image_width', 'landingfactory_max_srcset_image_width');
 
-function _svbk_post_thumbnail_sizes_attr( $attr, $attachment, $size ) {
+function landingfactory_post_thumbnail_sizes_attr( $attr, $attachment, $size ) {
 
 	if ( ('post-thumbnail' === $size) || ('thumbnail' === $size) ) {
 		$attr['sizes'] = '(max-width: 710px) 100vw, (max-width: 910px) 50vw, (max-width: 1320px) 40vw, 650px';
@@ -170,7 +170,7 @@ function _svbk_post_thumbnail_sizes_attr( $attr, $attachment, $size ) {
 
 	return $attr;
 }
-add_filter( 'wp_get_attachment_image_attributes', '_svbk_post_thumbnail_sizes_attr', 10 , 3 );
+add_filter( 'wp_get_attachment_image_attributes', 'landingfactory_post_thumbnail_sizes_attr', 10 , 3 );
 
 /**
  * Implement the Custom Header feature.

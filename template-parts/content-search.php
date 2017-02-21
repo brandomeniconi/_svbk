@@ -4,7 +4,7 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package _svbk
+ * @package landingfactory
  */
 
 ?>
@@ -15,7 +15,7 @@
 
 		<?php if ( 'post' === get_post_type() ) : ?>
 		<div class="entry-meta">
-			<?php _svbk_posted_on(); ?>
+			<?php landingfactory_posted_on(); ?>
 		</div><!-- .entry-meta -->
 		<?php endif; ?>
 	</header><!-- .entry-header -->
@@ -25,6 +25,6 @@
 	</div><!-- .entry-summary -->
 
 	<footer class="entry-footer">
-		<?php _svbk_entry_footer(); ?>
+		<?php landingfactory_entry_footer(); ?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->

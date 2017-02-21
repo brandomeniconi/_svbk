@@ -8,34 +8,34 @@
  *
  * @link https://developer.wordpress.org/themes/functionality/custom-headers/
  *
- * @package _svbk
+ * @package landingfactory
  */
 
 /**
  * Set up the WordPress core custom header feature.
  *
- * @uses _svbk_header_style()
+ * @uses landingfactory_header_style()
  */
-function _svbk_custom_header_setup() {
-	add_theme_support( 'custom-header', apply_filters( '_svbk_custom_header_args', array(
+function landingfactory_custom_header_setup() {
+	add_theme_support( 'custom-header', apply_filters( 'landingfactory_custom_header_args', array(
 		'default-image'          => '',
 		'default-text-color'     => '000000',
 		'width'                  => 1980,
 		'height'                 => 1200,
 		'flex-height'            => true,
 		'flex-width'            =>	true,
-		'wp-head-callback'       => '_svbk_header_style',
+		'wp-head-callback'       => 'landingfactory_header_style',
 	) ) );
 }
-add_action( 'after_setup_theme', '_svbk_custom_header_setup' );
+add_action( 'after_setup_theme', 'landingfactory_custom_header_setup' );
 
-if ( ! function_exists( '_svbk_header_style' ) ) :
+if ( ! function_exists( 'landingfactory_header_style' ) ) :
 /**
  * Styles the header image and text displayed on the blog.
  *
- * @see _svbk_custom_header_setup().
+ * @see landingfactory_custom_header_setup().
  */
-function _svbk_header_style() {
+function landingfactory_header_style() {
 	$header_text_color = get_header_textcolor();
 
 	/*

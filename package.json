@@ -1,7 +1,7 @@
 {
-  "name": "_svbktheme",
+  "name": "landingfactorytheme",
   "version": "1.0.0",
-  "description": "Silverback Starter Theme",
+  "description": "Silverback Landing Factory Theme",
   "main": "index.php",
   "scripts": {
     "sass": "sass --watch ./sass:./"

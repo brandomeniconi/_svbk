@@ -14,11 +14,13 @@ function shortcode_ui_notices() {
 	if ( current_user_can( 'activate_plugins' ) ) {
 		?>
 		<div class="error message">
-			<p><?php esc_html_e( 'Shortcode UI plugin must be active for Shortcode UI Example plugin to function.', '_svbk' ); ?></p>
+			<p><?php esc_html_e( 'Shortcode UI plugin must be active for Shortcode UI Example plugin to function.', 'landingfactory' ); ?></p>
 		</div>
 		<?php
 	}
 }
 
 //Example
-// $shortcode_ui_dc = DoorwayCard::register(['page']);
+Testimonials::register([ 'attach_to' => ['page'] ]);
+SimpleBox::register([ 'attach_to' => ['page'] ]);
+SimpleBox::register([ 'attach_to' => ['page'], 'shortcode_id'=>'simple-box-image', 'classes'=>'simple_box_image', 'title'=>__('Image Box', 'landingfactory') ]);
