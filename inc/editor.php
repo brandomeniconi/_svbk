@@ -30,7 +30,6 @@ function landingfactory_mce_insert_formats( $init_array ) {
 			'classes' => 'accordion',
 			'wrapper' => true,
 		),		
-		
 		array(  
 			'title' => __('Subtitle', 'landingfactory'),  
 			'block' => 'div',  
@@ -38,11 +37,23 @@ function landingfactory_mce_insert_formats( $init_array ) {
 			'wrapper' => true,
 		),
 		array(  
-			'title' => __('Callout / Pull Quote', 'landingfactory'),  
+			'title' => __('Quote', 'landingfactory'),  
 			'block' => 'aside',  
 			'classes' => 'callout',
 			'wrapper' => true,
 		),
+		array(  
+			'title' => __('Half size Image', 'landingfactory'),  
+			'inline' => 'img',  
+			'classes' => 'half-size',
+			'wrapper' => false,
+		),		
+		array(  
+			'title' => __('Callout / Pull Quote', 'landingfactory'),  
+			'block' => 'aside',  
+			'classes' => 'callout',
+			'wrapper' => true,
+		),		
 		array(  
 			'title' => __('Highlighted Paragraph', 'landingfactory'),  
 			'block' => 'p',  
@@ -95,6 +106,8 @@ function landingfactory_add_tinymce_button($buttons) {
             //Add the button ID to the $button array
     $buttons[] = "section_button";
     $buttons[] = "band";
+    $buttons[] = "image_faq";
+    $buttons[] = "page_header";
     $buttons[] = "definition";
     return $buttons;
 }

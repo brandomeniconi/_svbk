@@ -4,7 +4,7 @@ jQuery(document).ready(function($) {
         init : function(ed, url) {
                 // Register command for when button is clicked
                 ed.addCommand('insert_section_template', function() {
-                    selected = tinyMCE.activeEditor.selection.getContent();
+                    var content, selected = tinyMCE.activeEditor.selection.getContent();
 
                     if( selected ){
                         //If text is selected when button is clicked
@@ -20,7 +20,7 @@ jQuery(document).ready(function($) {
                 
                 
                 ed.addCommand('insert_definition', function() {
-                    selected = tinyMCE.activeEditor.selection.getContent();
+                    var content, selected = tinyMCE.activeEditor.selection.getContent();
 
                     if( selected ){
                         content =  '<div class="definition">'+selected+'<span class="definition-text">Insert text here</span></div>';
@@ -32,7 +32,7 @@ jQuery(document).ready(function($) {
                 });    
                 
                 ed.addCommand('insert_band', function() {
-                    selected = tinyMCE.activeEditor.selection.getContent();
+                    var content, selected = tinyMCE.activeEditor.selection.getContent();
 
                     if( selected ){
                         content =  '<div class="band">'+selected+'</div>';
@@ -43,23 +43,43 @@ jQuery(document).ready(function($) {
                     tinymce.execCommand('mceInsertContent', false, content);
                 });   
                 
-                ed.addCommand('insert_image_band', function() {
-                    selected = tinyMCE.activeEditor.selection.getContent();
+                ed.addCommand('insert_image_faq', function() {
+                    var content, selected = tinyMCE.activeEditor.selection.getContent();
 
                     if( selected ){
-                        content =  '<div class="band">'+selected+'</div>';
-                    }else{
-                        content =  '<div class="band">Content</div>';
+                        content =  '<div class="image-faq"><img class="image" src="http://placehold.it/350x300" /><div class="content"><q>Domanda</q><h3>Title</h3>'+selected+'</div></div>';
+                    } else {
+                        content =  '<div class="image-faq"><img class="image" src="http://placehold.it/350x300" /><div class="content"><q>Domanda</q><h3>Title</h3>Content</div></div>';
                     }
 
                     tinymce.execCommand('mceInsertContent', false, content);
                 });                   
 
+                ed.addCommand('insert_image_section', function() {
+                    var content = '<section class="image-section">\n'
+                            +'<figure class="main-image">\n'
+                                +'<img src="http://placehold.it/350x300" />\n'
+                                +'<figcaption>[Insert Image Caption Here]</figcaption>\n'
+                            +'</figure>\n'                       
+                            +'<div class="content">\n'
+                                +'<header>\n'
+                                    +'<p class="pretitle">[Insert Text Before Title]</p>\n'
+                                    +'<h1 class="section-title">[Insert Answer Here]</h1>\n'
+                                    +'<p class="subtitle">[Insert Subtitle Here]</p>\n'
+                                +'</header>\n'
+                                +'[Insert Content Here]\n'
+                            +'</div>\n'
+                        '</section>';
+                    tinymce.execCommand('mceInsertContent', false, content);
+                });                   
+
+
             // Register buttons - trigger above command when clicked
             ed.addButton('section_button', {title : 'Section', cmd : 'insert_section_template', image: url.replace('js', 'icons') + '/tinymce/section.png' });
             ed.addButton('definition', {title : 'Definizione', cmd : 'insert_definition', image: url.replace('js', 'icons') + '/tinymce/anchors-index.png' });            
             ed.addButton('band', {title : 'Banda', cmd : 'insert_band', image: url.replace('js', 'icons') + '/tinymce/insert-band.png' });            
-            ed.addButton('image_band', {title : 'Banda con Immagine', cmd : 'insert_image_band', image: url.replace('js', 'icons') + '/tinymce/insert-image-band.png' });            
+            ed.addButton('image_faq', {title : 'Sottosezione con Immagine', cmd : 'insert_image_faq', image: url.replace('js', 'icons') + '/tinymce/insert-image-faq.png' });            
+            ed.addButton('image_section', {title : 'Image Section', cmd : 'insert_image_section', image: url.replace('js', 'icons') + '/tinymce/insert-image_section.png' });            
         },   
     });
 
