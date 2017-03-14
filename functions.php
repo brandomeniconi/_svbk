@@ -15,7 +15,7 @@ if(file_exists(__DIR__.'/vendor/autoload.php')){
 	require_once __DIR__.'/vendor/autoload.php';
 }
 
-if(class_exists('ThemeHelper')){
+if(class_exists('\Svbk\WP\Helpers\Theme')){
 	ThemeHelper::init()->all();
 }
 
@@ -52,6 +52,8 @@ function landingfactory_setup() {
 	 */
 	add_image_size( 'landingfactory-logo', 500, 500 );
 	add_theme_support( 'site-logo', array( 'size' => 'landingfactory-logo' ) );
+
+	set_post_thumbnail_size( 600, 400, true );
 
 	/*
 	 * Enable support for Post Thumbnails on posts and pages.
@@ -99,7 +101,7 @@ function landingfactory_setup() {
 	// Add theme support for selective refresh for widgets.
 	add_theme_support( 'customize-selective-refresh-widgets' );
 
-	if(class_exists('AMP')){
+	if(class_exists('\Svbk\WP\Helpers\AMP')){
 		AMP::init();
 	}
 }

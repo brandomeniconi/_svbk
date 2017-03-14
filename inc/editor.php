@@ -1,9 +1,9 @@
-<?php 
+<?php
 
 function landingfactory_mce_insert_formats( $init_array ) {  
     
 	// Define the style_formats array
-	$style_formats = array(  
+	$style_formats = array(
 		// Each array child is a format with it's own settings
 		array(  
 			'title' => __('Dropcap', 'landingfactory'),  
@@ -11,9 +11,9 @@ function landingfactory_mce_insert_formats( $init_array ) {
 			'classes' => 'dropcap',
 			'wrapper' => true,
 		),
-		array(  
-			'title' => __('Section', '_sbk'),  
-			'block' => 'section',  
+		array(
+			'title' => __('Section', '_sbk'),
+			'block' => 'section',
 			'classes' => 'content-section',
 			'wrapper' => true,
 		),		
@@ -61,7 +61,7 @@ function landingfactory_mce_insert_formats( $init_array ) {
 			'wrapper' => false,
 		),
 
-	);  
+	);
 	// Insert the array, JSON ENCODED, into 'style_formats'
 	$init_array['style_formats'] = json_encode( $style_formats );  
 	
@@ -109,5 +109,6 @@ function landingfactory_add_tinymce_button($buttons) {
     $buttons[] = "image_faq";
     $buttons[] = "page_header";
     $buttons[] = "definition";
+    
     return $buttons;
 }
