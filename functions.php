@@ -17,11 +17,6 @@ if(class_exists('\Svbk\WP\Helpers\Theme')){
 	Helpers\Theme::init()->all();
 }
 
-/*COSTY'S BEEN HERE!
-
-if(class_exists('\Svbk\WP\Helpers\Jetpack')){
-	Helpers\Jetpack::removeRelated();
-}*/
 
 if ( ! function_exists( 'studiolegalemauro_setup' ) ) :
 /**
@@ -51,13 +46,10 @@ function studiolegalemauro_setup() {
 	 */
 	add_theme_support( 'title-tag' );
 
-	/*
-	 * Enable support for site logo.
-	 */
-	add_image_size( 'studiolegalemauro-logo', 500, 500 );
-	add_theme_support( 'site-logo', array( 'size' => 'studiolegalemauro-logo' ) );
+	add_image_size( 'content-half', 768, 999 );
+	add_image_size( 'content-full', 1320, 999 );
 
-	set_post_thumbnail_size( 600, 400, true );
+	set_post_thumbnail_size( 768, 560, true );
 
 	/*
 	 * Enable support for Post Thumbnails on posts and pages.
@@ -88,8 +80,8 @@ function studiolegalemauro_setup() {
 	 * Enable support for custom logo.
 	 */
 	add_theme_support( 'custom-logo', array(
-		'height'      => 250,
-		'width'       => 250,
+		'height'      => 400,
+		'width'       => 100,
 		'flex-width'  => true,
 		'flex-height' => true,
 	) );
@@ -150,7 +142,7 @@ function studiolegalemauro_scripts() {
 
 	wp_enqueue_script( 'studiolegalemauro-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 	wp_enqueue_script( 'studiolegalemauro-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
-	wp_enqueue_script( 'studiolegalemauro-theme', get_template_directory_uri() . '/js/theme.js', array(), '20170120', true );
+	wp_enqueue_script( 'studiolegalemauro-theme', get_template_directory_uri() . '/js/theme.js', array('jquery'), '20170120', true );
 
 	if(get_theme_mod('sticky_header')){
 		wp_enqueue_script( 'waypoints' );
@@ -163,20 +155,24 @@ function studiolegalemauro_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'studiolegalemauro_scripts' );
 
-
 function studiolegalemauro_max_srcset_image_width($size){
-	return 2900;
+	return 2560;
 }
 add_filter( 'max_srcset_image_width', 'studiolegalemauro_max_srcset_image_width');
 
 function studiolegalemauro_post_thumbnail_sizes_attr( $attr, $attachment, $size ) {
 
-	if ( ('post-thumbnail' === $size) || ('thumbnail' === $size) ) {
-		$attr['sizes'] = '(max-width: 710px) 100vw, (max-width: 910px) 50vw, (max-width: 1320px) 40vw, 650px';
-	} else if( 'page-header' === $size) {
-		$attr['sizes'] = '(max-width: 910px) 100vw, 90vw';
-	} else if( 'content-full' === $size) {
-		$attr['sizes'] = ' (max-width: 1320px) 100vw,  1320px';
+	switch($size){
+		case 'post-thumbnail':
+			$attr['sizes'] = '(max-width: 768px) 100vw, (max-width: 1024px) 50vw, (max-width: 1320px) 35vw, 600px';	break;
+		case 'thumbnail':
+			$attr['sizes'] = '(max-width: 710px) 100vw, (max-width: 910px) 50vw, (max-width: 1320px) 40vw, 650px';	break;
+		case 'header':
+			$attr['sizes'] = '100vw'; break;
+		case 'content-full':
+			$attr['sizes'] = ' (max-width: 1320px) 100vw,  1320px'; break;
+		case 'content-half':
+			$attr['sizes'] = ' (max-width: 1024px) 100vw, (max-width: 1320px) 50vw, 660px'; break;
 	}
 
 	return $attr;
