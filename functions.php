@@ -1,10 +1,10 @@
 <?php
 /**
- *'landingfactory'functions and definitions
+ *'studiolegalemauro'functions and definitions
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package landingfactory
+ * @package studiolegalemauro
  */
 
 use \Svbk\WP\Helpers;
@@ -23,7 +23,7 @@ if(class_exists('\Svbk\WP\Helpers\Jetpack')){
 	Helpers\Jetpack::removeRelated();
 }*/
 
-if ( ! function_exists( 'landingfactory_setup' ) ) :
+if ( ! function_exists( 'studiolegalemauro_setup' ) ) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.
  *
@@ -31,14 +31,14 @@ if ( ! function_exists( 'landingfactory_setup' ) ) :
  * runs before the init hook. The init hook is too late for some features, such
  * as indicating support for post thumbnails.
  */
-function landingfactory_setup() {
+function studiolegalemauro_setup() {
 	/*
 	 * Make theme available for translation.
 	 * Translations can be filed in the /languages/ directory.
-	 * If you're building a theme based on landingfactory, use a find and replace
-	 * to change'landingfactory'to the name of your theme in all the template files.
+	 * If you're building a theme based on studiolegalemauro, use a find and replace
+	 * to change'studiolegalemauro'to the name of your theme in all the template files.
 	 */
-	load_theme_textdomain( 'landingfactory', get_template_directory() . '/languages' );
+	load_theme_textdomain( 'studiolegalemauro', get_template_directory() . '/languages' );
 
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
@@ -54,8 +54,8 @@ function landingfactory_setup() {
 	/*
 	 * Enable support for site logo.
 	 */
-	add_image_size( 'landingfactory-logo', 500, 500 );
-	add_theme_support( 'site-logo', array( 'size' => 'landingfactory-logo' ) );
+	add_image_size( 'studiolegalemauro-logo', 500, 500 );
+	add_theme_support( 'site-logo', array( 'size' => 'studiolegalemauro-logo' ) );
 
 	set_post_thumbnail_size( 600, 400, true );
 
@@ -68,8 +68,8 @@ function landingfactory_setup() {
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
-		'menu-1' => esc_html__( 'Primary', 'landingfactory' ),
-		'menu-404' => esc_html__( 'Not Found (404) Page', 'landingfactory' ),
+		'menu-1' => esc_html__( 'Primary', 'studiolegalemauro' ),
+		'menu-404' => esc_html__( 'Not Found (404) Page', 'studiolegalemauro' ),
 	) );
 
 	/*
@@ -95,7 +95,7 @@ function landingfactory_setup() {
 	) );
 
 	// Set up the WordPress core custom background feature.
-	add_theme_support( 'custom-background', apply_filters( 'landingfactory_custom_background_args', array(
+	add_theme_support( 'custom-background', apply_filters( 'studiolegalemauro_custom_background_args', array(
 		'default-color' => 'ffffff',
 		'default-image' => '',
 	) ) );
@@ -110,7 +110,7 @@ function landingfactory_setup() {
 	}
 }
 endif;
-add_action( 'after_setup_theme', 'landingfactory_setup' );
+add_action( 'after_setup_theme', 'studiolegalemauro_setup' );
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
@@ -119,38 +119,38 @@ add_action( 'after_setup_theme', 'landingfactory_setup' );
  *
  * @global int $content_width
  */
-function landingfactory_content_width() {
-	$GLOBALS['content_width'] = apply_filters( 'landingfactory_content_width', 640 );
+function studiolegalemauro_content_width() {
+	$GLOBALS['content_width'] = apply_filters( 'studiolegalemauro_content_width', 640 );
 }
-add_action( 'after_setup_theme', 'landingfactory_content_width', 0 );
+add_action( 'after_setup_theme', 'studiolegalemauro_content_width', 0 );
 
 /**
  * Register widget area.
  *
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
-function landingfactory_widgets_init() {
+function studiolegalemauro_widgets_init() {
 	register_sidebar( array(
-		'name'          => esc_html__( 'Sidebar','landingfactory'),
+		'name'          => esc_html__( 'Sidebar','studiolegalemauro'),
 		'id'            => 'sidebar-1',
-		'description'   => esc_html__( 'Add widgets here.','landingfactory'),
+		'description'   => esc_html__( 'Add widgets here.','studiolegalemauro'),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
 	) );
 }
-add_action( 'widgets_init', 'landingfactory_widgets_init' );
+add_action( 'widgets_init', 'studiolegalemauro_widgets_init' );
 
 /**
  * Enqueue scripts and styles.
  */
-function landingfactory_scripts() {
-	wp_enqueue_style( 'landingfactory-style', get_stylesheet_uri() );
+function studiolegalemauro_scripts() {
+	wp_enqueue_style( 'studiolegalemauro-style', get_stylesheet_uri() );
 
-	wp_enqueue_script( 'landingfactory-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
-	wp_enqueue_script( 'landingfactory-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
-	wp_enqueue_script( 'landingfactory-theme', get_template_directory_uri() . '/js/theme.js', array(), '20170120', true );
+	wp_enqueue_script( 'studiolegalemauro-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
+	wp_enqueue_script( 'studiolegalemauro-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
+	wp_enqueue_script( 'studiolegalemauro-theme', get_template_directory_uri() . '/js/theme.js', array(), '20170120', true );
 
 	if(get_theme_mod('sticky_header')){
 		wp_enqueue_script( 'waypoints' );
@@ -161,15 +161,15 @@ function landingfactory_scripts() {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
-add_action( 'wp_enqueue_scripts', 'landingfactory_scripts' );
+add_action( 'wp_enqueue_scripts', 'studiolegalemauro_scripts' );
 
 
-function landingfactory_max_srcset_image_width($size){
+function studiolegalemauro_max_srcset_image_width($size){
 	return 2900;
 }
-add_filter( 'max_srcset_image_width', 'landingfactory_max_srcset_image_width');
+add_filter( 'max_srcset_image_width', 'studiolegalemauro_max_srcset_image_width');
 
-function landingfactory_post_thumbnail_sizes_attr( $attr, $attachment, $size ) {
+function studiolegalemauro_post_thumbnail_sizes_attr( $attr, $attachment, $size ) {
 
 	if ( ('post-thumbnail' === $size) || ('thumbnail' === $size) ) {
 		$attr['sizes'] = '(max-width: 710px) 100vw, (max-width: 910px) 50vw, (max-width: 1320px) 40vw, 650px';
@@ -181,7 +181,7 @@ function landingfactory_post_thumbnail_sizes_attr( $attr, $attachment, $size ) {
 
 	return $attr;
 }
-add_filter( 'wp_get_attachment_image_attributes', 'landingfactory_post_thumbnail_sizes_attr', 10 , 3 );
+add_filter( 'wp_get_attachment_image_attributes', 'studiolegalemauro_post_thumbnail_sizes_attr', 10 , 3 );
 
 /**
  * Implement the Custom Header feature.

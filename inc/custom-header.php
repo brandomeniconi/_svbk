@@ -8,16 +8,16 @@
  *
  * @link https://developer.wordpress.org/themes/functionality/custom-headers/
  *
- * @package landingfactory
+ * @package studiolegalemauro
  */
 
 /**
  * Set up the WordPress core custom header feature.
  *
- * @uses landingfactory_header_style()
+ * @uses studiolegalemauro_header_style()
  */
-function landingfactory_custom_header_setup() {
-	add_theme_support( 'custom-header', apply_filters( 'landingfactory_custom_header_args', array(
+function studiolegalemauro_custom_header_setup() {
+	add_theme_support( 'custom-header', apply_filters( 'studiolegalemauro_custom_header_args', array(
 		'video' 				 => true,
 		'default-image'          => '',
 		'default-text-color'     => '000000',
@@ -25,18 +25,18 @@ function landingfactory_custom_header_setup() {
 		'height'                 => 1200,
 		'flex-height'            => true,
 		'flex-width'             =>	true,
-		'wp-head-callback'       => 'landingfactory_header_style',
+		'wp-head-callback'       => 'studiolegalemauro_header_style',
 	) ) );
 }
-add_action( 'after_setup_theme', 'landingfactory_custom_header_setup' );
+add_action( 'after_setup_theme', 'studiolegalemauro_custom_header_setup' );
 
-if ( ! function_exists( 'landingfactory_header_style' ) ) :
+if ( ! function_exists( 'studiolegalemauro_header_style' ) ) :
 /**
  * Styles the header image and text displayed on the blog.
  *
- * @see landingfactory_custom_header_setup().
+ * @see studiolegalemauro_custom_header_setup().
  */
-function landingfactory_header_style() {
+function studiolegalemauro_header_style() {
 	$header_text_color = get_header_textcolor();
 
 	/*

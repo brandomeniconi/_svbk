@@ -6,7 +6,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package landingfactory
+ * @package studiolegalemauro
  */
 
 ?><!DOCTYPE html>
@@ -22,7 +22,7 @@
 <body <?php body_class(); ?>>
 <?php do_action('after_body_tag'); ?>
 <div id="page" class="site">
-	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'landingfactory' ); ?></a>
+	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'studiolegalemauro' ); ?></a>
 	<header id="masthead" class="site-header" role="banner">
 
 		<?php if(is_front_page()){ get_template_part( 'template-parts/header/header', 'image' );	}	?>

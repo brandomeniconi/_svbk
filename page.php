@@ -9,7 +9,7 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package landingfactory
+ * @package studiolegalemauro
  */
 
 get_header(); ?>

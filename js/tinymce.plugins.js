@@ -1,6 +1,6 @@
 jQuery(document).ready(function($) {
 
-    tinymce.create('tinymce.plugins.landingfactory_helper_buttons', {
+    tinymce.create('tinymce.plugins.studiolegalemauro_helper_buttons', {
         init : function(ed, url) {
                 // Register command for when button is clicked
                 ed.addCommand('insert_section_template', function() {
@@ -86,5 +86,5 @@ jQuery(document).ready(function($) {
     // Register our TinyMCE plugin
     // first parameter is the button ID1
     // second parameter must match the first parameter of the tinymce.create() function above
-    tinymce.PluginManager.add('landingfactory_helper_buttons', tinymce.plugins.landingfactory_helper_buttons);
+    tinymce.PluginManager.add('studiolegalemauro_helper_buttons', tinymce.plugins.studiolegalemauro_helper_buttons);
 });

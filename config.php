@@ -4,7 +4,7 @@
 
 return array(
     'version' =>'1.2',
-    'textdomain' => 'landingfactory',
+    'textdomain' => 'studiolegalemauro',
     'contact'=> [
         'company_name' => 'Avv. Giuseppe Mauro',
         'address' => 'Via Angelo Emo n°106',
@@ -33,22 +33,22 @@ return array(
         'fonts' => 'Open+Sans:400,700',
     ],
 
-    //'google-tag-manager' => [
-    //    'id' => '',
-    //],
+    'google-tag-manager' => [
+        'id' => 'GTM-NHSM8RS',
+    ],
 
-    //'googlemaps' => [
-    //    'key' => '',
-    //    'callback' => 'initGMaps',
-    //    'libraries' => 'places',
-    //    'mapOptions' => [ 
-    //      'zoom' => '14',
-    //      'styles' => ''
-    //    ],
-    //    'markerOptions' => [
-    //      'icon' => get_stylesheet_directory_uri().'/media/pin.png',
-    //    ]    
-    //],
+    'googlemaps' => [
+        'key' => 'AIzaSyA1sdx1TJQ2pI8caA8wzn0kvDTDecbXyGA',
+        'callback' => 'initGMaps',
+        'libraries' => 'places',
+        'mapOptions' => [ 
+         'zoom' => '14',
+//         'styles' => ''
+        ],
+        'markerOptions' => [
+         'icon' => get_stylesheet_directory_uri().'/media/pin.png',
+        ]    
+    ],
 
     'icons' => [
         'path' => 'icons/style.css',
@@ -58,16 +58,16 @@ return array(
         'api_key' => '2ee806bc-a6f2-494a-8889-8c66239f3dad',
     ],
 
-    //'iubenda' => [
-    //    'siteId' => '',
-    //    'cookiePolicyId' => '',
-    //    'privacyPolicyId' => '',
-    //    'banner' => [
-    //        'slideDown'=> false,
-    //        'applyStyles' => false,
-    //        'content'=> ''
-    //    ]
-    //]
+    'iubenda' => [
+        'siteId' => '732770',
+        'cookiePolicyId' => '8039003',
+        'privacyPolicyId' => '8039003',
+        'banner' => [
+            'slideDown'=> false,
+	        'applyStyles' => false,
+	        //'content'=> ''
+	    ]
+    ]
 
     # generate access token @ https://www.maestrooo.com/instagram || http://instagram.pixelunion.net/
     # lookup instagram id @ http://jelled.com/instagram/lookup-user-id

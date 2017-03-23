@@ -1,8 +1,8 @@
 <?php
 /**
- *'landingfactory'Theme Customizer
+ *'studiolegalemauro'Theme Customizer
  *
- * @package landingfactory
+ * @package studiolegalemauro
  */
 
 /**
@@ -10,7 +10,7 @@
  *
  * @param WP_Customize_Manager $wp_customize Theme Customizer object.
  */
-function landingfactory_customize_register( $wp_customize ) {
+function studiolegalemauro_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
@@ -60,13 +60,13 @@ function landingfactory_customize_register( $wp_customize ) {
 		));
 
 		$wp_customize->add_control( new WP_Customize_Media_Control( $wp_customize, "archive_{$cpt->name}_image", array(
-		  'label' => sprintf(__( '%s Archive Image', 'landingfactory' ), $cpt->label),
+		  'label' => sprintf(__( '%s Archive Image', 'studiolegalemauro' ), $cpt->label),
 		  'section' => 'archives',
 		  'mime_type' => 'image',
 		) ) );
 
 		$wp_customize->add_control( "archive_{$cpt->name}_description", array(
-		  'label' =>  sprintf(__( '%s Archive Description', 'landingfactory' ), $cpt->label),
+		  'label' =>  sprintf(__( '%s Archive Description', 'studiolegalemauro' ), $cpt->label),
 		  'type' => 'textarea',
 		  'section' => 'archives',
 		) );
@@ -76,13 +76,13 @@ function landingfactory_customize_register( $wp_customize ) {
 	//Footer setings
 	$wp_customize->add_setting( 'footer_logo' );
 	$wp_customize->add_section( 'footer', array(
-	  'title' => __( 'Footer', 'landingfactory' ),
-	  'description' => __( 'Footer Settings', 'landingfactory' ),
+	  'title' => __( 'Footer', 'studiolegalemauro' ),
+	  'description' => __( 'Footer Settings', 'studiolegalemauro' ),
 	  'priority' => 160,
 	) );
 
 	$wp_customize->add_control( new WP_Customize_Media_Control( $wp_customize, 'footer_logo', array(
-	  'label' => __( 'Footer Logo', 'landingfactory' ),
+	  'label' => __( 'Footer Logo', 'studiolegalemauro' ),
 	  'section' => 'footer',
 	  'mime_type' => 'image',
 	) ) );
@@ -109,12 +109,12 @@ function landingfactory_customize_register( $wp_customize ) {
 	));
 
 }
-add_action( 'customize_register', 'landingfactory_customize_register' );
+add_action( 'customize_register', 'studiolegalemauro_customize_register' );
 
 /**
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
  */
-function landingfactory_customize_preview_js() {
-	wp_enqueue_script( 'landingfactory_customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '20151215', true );
+function studiolegalemauro_customize_preview_js() {
+	wp_enqueue_script( 'studiolegalemauro_customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '20151215', true );
 }
-add_action( 'customize_preview_init', 'landingfactory_customize_preview_js' );
+add_action( 'customize_preview_init', 'studiolegalemauro_customize_preview_js' );

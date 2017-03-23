@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'studio-mauro';
-  src:  url('http://divorzistapisa.landing-factory-silverbackstudio.c9users.io/app/themes/landing/icons/fonts/studio-mauro.eot?rpzbas');
-  src:  url('http://divorzistapisa.landing-factory-silverbackstudio.c9users.io/app/themes/landing/icons/fonts/studio-mauro.eot?rpzbas#iefix') format('embedded-opentype'),
-    url('http://divorzistapisa.landing-factory-silverbackstudio.c9users.io/app/themes/landing/icons/fonts/studio-mauro.ttf?rpzbas') format('truetype'),
-    url('http://divorzistapisa.landing-factory-silverbackstudio.c9users.io/app/themes/landing/icons/fonts/studio-mauro.woff?rpzbas') format('woff'),
-    url('http://divorzistapisa.landing-factory-silverbackstudio.c9users.io/app/themes/landing/icons/fonts/studio-mauro.svg?rpzbas#studio-mauro') format('svg');
+  src:  url('http://divorzistapisa.landing-factory-silverbackstudio.c9users.io/app/themes/studiolegalemauro/icons/fonts/studio-mauro.eot?rpzbas');
+  src:  url('http://divorzistapisa.landing-factory-silverbackstudio.c9users.io/app/themes/studiolegalemauro/icons/fonts/studio-mauro.eot?rpzbas#iefix') format('embedded-opentype'),
+    url('http://divorzistapisa.landing-factory-silverbackstudio.c9users.io/app/themes/studiolegalemauro/icons/fonts/studio-mauro.ttf?rpzbas') format('truetype'),
+    url('http://divorzistapisa.landing-factory-silverbackstudio.c9users.io/app/themes/studiolegalemauro/icons/fonts/studio-mauro.woff?rpzbas') format('woff'),
+    url('http://divorzistapisa.landing-factory-silverbackstudio.c9users.io/app/themes/studiolegalemauro/icons/fonts/studio-mauro.svg?rpzbas#studio-mauro') format('svg');
   font-weight: normal;
   font-style: normal;
 }

@@ -24,7 +24,7 @@ class Consulenza extends Contact {
             'error' => __('Please enter your contact hours', 'svbk-shortcakes')                
         ), 'email');            
         
-        $this->inputFields['request']['label'] = __('Do you want to specify something more?', 'landingfactory' );
+        $this->inputFields['request']['label'] = __('Do you want to specify something more?', 'studiolegalemauro' );
         
         unset($this->inputFields['subject']);
     }
