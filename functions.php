@@ -7,17 +7,21 @@
  * @package landingfactory
  */
 
-use \Svbk\WP\Helpers\Theme as ThemeHelper;
-use \Svbk\WP\Helpers\CdnScripts;
-use \Svbk\WP\Helpers\AMP;
+use \Svbk\WP\Helpers;
 
 if(file_exists(__DIR__.'/vendor/autoload.php')){
 	require_once __DIR__.'/vendor/autoload.php';
 }
 
 if(class_exists('\Svbk\WP\Helpers\Theme')){
-	ThemeHelper::init()->all();
+	Helpers\Theme::init()->all();
 }
+
+/*COSTY'S BEEN HERE!
+
+if(class_exists('\Svbk\WP\Helpers\Jetpack')){
+	Helpers\Jetpack::removeRelated();
+}*/
 
 if ( ! function_exists( 'landingfactory_setup' ) ) :
 /**
@@ -102,7 +106,7 @@ function landingfactory_setup() {
 	add_theme_support( 'customize-selective-refresh-widgets' );
 
 	if(class_exists('\Svbk\WP\Helpers\AMP')){
-		AMP::init();
+		Helpers\AMP::init();
 	}
 }
 endif;

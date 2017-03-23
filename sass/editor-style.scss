@@ -4,22 +4,26 @@
 
 @import "site/primary/posts-and-pages";
 
+h1,h2,h3 {
+	background: #CCC;
+}
+
 h4 {
 	display: inline-block;
 	position: relative;
 	left: 50%;
 	transform: translateX(-50%);
-	border-bottom: 1px solid $color__brand-main-dark;
+	border-bottom: 1px solid #000;
 }
 
 .dropcap {
-	color: $color__brand-main-dark;
+	color: #000;
 	font-size: 1.5em;
 	font-weight: 400;
 }
 
 .highlited-text {
-	border-left: 3px solid $color__brand-main-dark;
+	border-left: 3px solid #000;
 	padding-left: 0.5em;
 	font-style: italic;
 }
@@ -56,7 +60,7 @@ blockquote:before {
 .doorway-card {
 	display: block;
 	width: 100%;
-  background: $color__brand-main-dark;
+  background: #000;
   text-align: center;
   padding-bottom: 2em;
 }
@@ -76,9 +80,20 @@ section {
 	margin-bottom: 2em;
 }
 
-section  header {
-	background: #EFEFEF;
+section:after{
+	 visibility: hidden;
+     display: block;
+     font-size: 0;
+     content: " ";
+     clear: both;
+     height: 0;
+}
+
+section header {
+	border: 1px dotted #DDD;
+	background: #EEE;
     padding: 0.5em 1em;
+    margin-bottom: 1em;
 }
 
 .subtitle {}
@@ -183,4 +198,25 @@ h2 {
 	background: #EFEFEF;
 	padding: 10px;
 	box-shadow: 2px 2px 2px #AAA;
+}
+
+.image-faq{
+	@include clearfix();
+	border: 1px solid #CCC;
+	padding:  0 1% 1%;
+	margin-top: 1em;
+	width:98%;
+}
+
+.image-faq .image {
+	float:left;
+	margin-right: 3em;
+}
+
+.image-faq q {
+	font-style: italic;
+}
+
+.image-section .main-image {
+	float: right;
 }

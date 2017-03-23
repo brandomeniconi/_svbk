@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: _s 1.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/tags/_s\n"
-"POT-Creation-Date: 2017-02-13 11:59+0000\n"
+"POT-Creation-Date: 2017-03-12 16:17+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -13,11 +13,6 @@ msgstr ""
 "Language: \n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION\n"
 "X-Generator: Loco - https://localise.biz/"
-
-#: search.php:19
-#, php-format
-msgid "Search Results for: %s"
-msgstr ""
 
 #: comments.php:31
 #, php-format
@@ -41,6 +36,15 @@ msgstr ""
 
 #: comments.php:78
 msgid "Comments are closed."
+msgstr ""
+
+#: search.php:19
+#, php-format
+msgid "Search Results for: %s"
+msgstr ""
+
+#: header.php:25
+msgid "Skip to content"
 msgstr ""
 
 #: functions.php:65
@@ -68,50 +72,8 @@ msgstr ""
 msgid "Made with passion by %s"
 msgstr ""
 
-#: header.php:25
-msgid "Skip to content"
-msgstr ""
-
-#: header.php:45
-msgid "Primary Menu"
-msgstr ""
-
-#: template-parts/content-page.php:22 template-parts/content.php:38
-msgid "Pages:"
-msgstr ""
-
-#. translators: %s: Name of current post
-#: template-parts/content-page.php:34 inc/template-tags.php:72
-#, php-format
-msgid "Edit %s"
-msgstr ""
-
-#: template-parts/content-none.php:14
-msgid "Nothing Found"
-msgstr ""
-
-#: template-parts/content-none.php:21
-#, php-format
-msgid ""
-"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
-msgstr ""
-
-#: template-parts/content-none.php:25
-msgid ""
-"Sorry, but nothing matched your search terms. Please try again with some "
-"different keywords."
-msgstr ""
-
-#: template-parts/content-none.php:31
-msgid ""
-"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
-"searching can help."
-msgstr ""
-
-#. translators: %s: Name of current post.
-#: template-parts/content.php:33
-#, php-format
-msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
+#. Name of the template
+msgid "Avvocato Pisa"
 msgstr ""
 
 #: inc/template-tags.php:28
@@ -146,10 +108,42 @@ msgstr ""
 msgid "Leave a Comment<span class=\"screen-reader-text\"> on %s</span>"
 msgstr ""
 
-#: inc/shortcode-ui.php:17
+#. translators: %s: Name of current post
+#: inc/template-tags.php:72 template-parts/content-page.php:34
+#, php-format
+msgid "Edit %s"
+msgstr ""
+
+#: inc/shortcode-ui.php:19
 msgid ""
 "Shortcode UI plugin must be active for Shortcode UI Example plugin to "
 "function."
+msgstr ""
+
+#: inc/shortcode-ui.php:34
+msgid "Image Box"
+msgstr ""
+
+#: inc/customizer.php:63
+#, php-format
+msgid "%s Archive Image"
+msgstr ""
+
+#: inc/customizer.php:69
+#, php-format
+msgid "%s Archive Description"
+msgstr ""
+
+#: inc/customizer.php:79
+msgid "Footer"
+msgstr ""
+
+#: inc/customizer.php:80
+msgid "Footer Settings"
+msgstr ""
+
+#: inc/customizer.php:85
+msgid "Footer Logo"
 msgstr ""
 
 #: inc/editor.php:9
@@ -164,32 +158,68 @@ msgstr ""
 msgid "Accordion"
 msgstr ""
 
-#: inc/editor.php:35
+#: inc/editor.php:34
 msgid "Subtitle"
 msgstr ""
 
-#: inc/editor.php:41
+#: inc/editor.php:40
+msgid "Quote"
+msgstr ""
+
+#: inc/editor.php:46
+msgid "Half size Image"
+msgstr ""
+
+#: inc/editor.php:52
 msgid "Callout / Pull Quote"
 msgstr ""
 
-#: inc/editor.php:47
+#: inc/editor.php:58
 msgid "Highlighted Paragraph"
 msgstr ""
 
-#: inc/customizer.php:21
-msgid "Footer"
+#: template-parts/content-page.php:22 template-parts/content.php:38
+msgid "Pages:"
 msgstr ""
 
-#: inc/customizer.php:22
-msgid "Footer Settings"
+#: template-parts/content-none.php:14
+msgid "Nothing Found"
 msgstr ""
 
-#: inc/customizer.php:27
-msgid "Footer Logo"
+#: template-parts/content-none.php:21
+#, php-format
+msgid ""
+"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+
+#: template-parts/content-none.php:25
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
+msgstr ""
+
+#: template-parts/content-none.php:31
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+msgstr ""
+
+#: template-parts/thumb.php:21
+msgid "View More"
+msgstr ""
+
+#. translators: %s: Name of current post.
+#: template-parts/content.php:33
+#, php-format
+msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
+msgstr ""
+
+#: inc/Shortcakes/Consulenza.php:35
+msgid "Do you want to specify something more?"
 msgstr ""
 
 #. Name of the theme
-msgid "_svbk"
+msgid "Landing Factory"
 msgstr ""
 
 #. Author of the theme

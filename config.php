@@ -6,20 +6,31 @@ return array(
     'version' =>'1.2',
     'textdomain' => 'landingfactory',
     'contact'=> [
-        'company_name' => '[Company Name]',
-        'address' => '[Company Address]',
-        'cap' => '[0000]',
-        'city' => '[city]',
-        'country' => '[Country]',
-        'address2' => '[AD2]',
-        'phone' => '[+00 00000TEL]',
-        'fax' => '[+00 00000FAX]',
-        'email' => '[mail@example.com]',
-        'vat' => '[000000VATID]',
+        'company_name' => 'Avv. Giuseppe Mauro',
+        'address' => 'Via Angelo Emo n°106',
+        'cap' => '00136',
+        'city' => 'Roma&nbsp;(RM)',
+        'phone' => '(+39)&nbsp;06&nbsp;60657026',
+        'fax' => '(+39)&nbsp;06&nbsp;68806878',
+        'email' => 'g.mauro@studiolegalemauro.net',
+        'pec' => 'giuseppemauro@ordineavvocatiroma.org',
+        'vat' => '02766360784',
+    ],
+
+    'contact_pisa' => [
+        'company_name' => 'Avv. Ferdinando Mauro',
+        'address' => 'Via Renato Fucini n°49',
+        'cap' => '56127',
+        'city' => 'Pisa&nbsp;(PI)',
+        'phone' => '(+39)&nbsp;050&nbsp;5202388',
+        'fax' => '(+39)&nbsp;06&nbsp;68806878',
+        'email' => 'f.mauro@studiolegalemauro.net',
+        'pec' => 'ferdinandomauro@ordineavvocatiroma.org',
+        'vat' => '03197530789',    
     ],
 
     'google-fonts' => [
-        'fonts' => 'Roboto:300,400',
+        'fonts' => 'Open+Sans:400,700',
     ],
 
     //'google-tag-manager' => [
@@ -43,9 +54,9 @@ return array(
         'path' => 'icons/style.css',
     ],
 
-    //'fonts_com' => [
-    //    'api_key' => '',
-    //],
+    'fonts_com' => [
+        'api_key' => '2ee806bc-a6f2-494a-8889-8c66239f3dad',
+    ],
 
     //'iubenda' => [
     //    'siteId' => '',

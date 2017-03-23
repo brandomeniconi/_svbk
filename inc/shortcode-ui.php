@@ -2,6 +2,9 @@
 
 namespace Svbk\WP\Shortcakes;
 
+use Svbk\WP\Helpers\Mandrill;
+use Svbk\WP\Themes\LandingFactory\Shortcakes\Consulenza;
+
 add_action( 'init', __NAMESPACE__.'\\shortcode_ui_detection' );
 
 function shortcode_ui_detection() {
@@ -20,7 +23,43 @@ function shortcode_ui_notices() {
 	}
 }
 
+Mandrill::$messageDefaults['subaccount'] = 'studiolegalemauro';
+
 //Example
 Testimonials::register([ 'attach_to' => ['page'] ]);
+ResponsiveImage::register([ 'attach_to' => ['page'] ]);
+
 SimpleBox::register([ 'attach_to' => ['page'] ]);
-SimpleBox::register([ 'attach_to' => ['page'], 'shortcode_id'=>'simple-box-image', 'classes'=>'simple_box_image', 'title'=>__('Image Box', 'landingfactory') ]);
+
+SimpleBox::register([ 
+	'attach_to' => ['page'], 
+	'shortcode_id'=>'simple-box-image', 
+	'classes'=>'simple_box_image', 
+	'title'=>__('Image Box', 'landingfactory') 
+]);
+
+WhitepaperDl::register(
+	array(
+		'attach_to' => ['page'], 
+		'mc_apikey'=>'87e65d0e377f4e584097a4d4a69f6172-us14', 
+		'mc_list_id'=>'8776f4b5de', 
+		'md_apikey' => 'yV5gWpU-hNrqMlkFt9LKaw',
+		'md_template' => 'test-landing',
+	)
+);
+
+Consulenza::register(
+	array(
+		'attach_to' => ['page'], 
+		'md_apikey' => 'yV5gWpU-hNrqMlkFt9LKaw',
+		'md_template' => 'test-consulenza',
+	)
+);
+
+ContactForm::register(
+	array(
+		'attach_to' => ['page'], 
+		'md_apikey' => 'yV5gWpU-hNrqMlkFt9LKaw',
+		'md_template' => 'test-contact',
+	)
+);

@@ -1,22 +1,70 @@
 button,
 input[type="button"],
 input[type="reset"],
-input[type="submit"] {
-	border: 1px solid;
-	border-color: $color__border-button;
-	border-radius: 3px;
-	background: $color__background-button;
+input[type="submit"],
+.button {
+	border-radius: 1.5em;
+	background: $color__corporate-secondary;
+	color: #fff;
 	color: rgba(0, 0, 0, .8);
 	@include font-size(0.75);
 	line-height: 1;
-	padding: .6em 1em .4em;
+	padding: .7em 1.2em .7em;
+	color: #fff;
+	text-transform: uppercase;
+	font-weight: 400;
+	font-size: 1rem;
+	display: inline-block;
+	box-shadow: 0 0 0 3px #fff, 0 0 0 4px $color__corporate-secondary;
+	transition: background 0.2s ease-in-out;
+    margin-bottom: 2em;
+    border: none;
+	
+	&:before,
+	&:after {
+		font-size: 0.5em;
+		vertical-align: middle;
+		position: relative;
+		bottom: 0.2em;
+	}
+	
+	&:before {
+		content: "\e902";
+		margin-right: 10px;
+	}
+	
+	&:after {
+		content: "\e90b";
+		margin-left: 10px;
+	}
 
 	&:hover {
-		border-color: $color__border-button-hover;
+		background: #32417A;
+		color: #fff;
 	}
 
 	&:active,
 	&:focus {
 		border-color: $color__border-button-focus;
+		outline: none;
+		color: #fff;
+	}
+	
+	&:visited {
+		color: #fff;
+	}
+}
+
+.button.loadmore {
+	background: none;
+	box-shadow: none;
+	border: none;
+	color: $color__corporate;
+	font-weight: bold;
+	font-size: 1.4rem;
+	
+	&:before, 
+	&:after {
+		display: none;
 	}
 }

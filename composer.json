@@ -26,9 +26,11 @@
     "require": {
         "silverbackstudio/wp-shortcakes": "v2.x-dev",
         "silverbackstudio/wp-themehelper": "dev-master",
-        "silverbackstudio/wp-widgets": "dev-master"
+        "silverbackstudio/wp-widgets": "dev-master",
+        "drewm/mailchimp-api": "^2.4",
+        "mandrill/mandrill": "^1.0"
     },
     "autoload": {
-        "psr-4": {"Svbk\\WP\\Themes\\landingfactory\\": "inc/"}
+        "psr-4": {"Svbk\\WP\\Themes\\LandingFactory\\": "inc/"}
     }
 }

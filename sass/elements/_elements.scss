@@ -8,15 +8,86 @@ html {
 	box-sizing: inherit;
 }
 
+*:before,
+*:after{
+	font-family: "studio-mauro";
+}
+
 body {
 	background: $color__background-body; /* Fallback for when there is no custom background color defined. */
+	overflow-x: hidden;
+}
+
+blockquote, q {
+	font-size: 1.8rem;
+	margin: 0 auto;
+	max-width: 800px;
+	text-align: center;
+	clear: both;
+	line-height: normal;
+	
+	p {
+		margin: 0;
+		font-family: $font__headings;
+		font-style: italic;
+	}
+	
+	&:before,
+	&:after {
+		display: block;
+        background-image: linear-gradient(to right, #d3c799 15%,
+            				rgba(255, 255, 255, 0) 15%,
+            				rgba(255, 255, 255, 0) 20%,
+            				rgba(255, 255, 255, 0)30%,
+            				#d3c799 30%);
+        background-position: 0 50%;
+        background-size: 100% 2px;
+        background-repeat: repeat-x;
+        color: $color__corporate;
+        font-size: 5.5rem;
+        padding-top: 2.5rem;
+        padding-left: 17%;
+        line-height: 0.5em;
+        text-align: left;
+	}
+	
+	&:after {
+        background-image: linear-gradient(to left, #d3c799 15%,
+            				rgba(255, 255, 255, 0) 15%,
+            				rgba(255, 255, 255, 0) 20%,
+            				rgba(255, 255, 255, 0)30%,
+            				#d3c799 30%);
+            				
+        text-align: right;
+        padding-right: 17%;
+        padding-left: 0;
+	}
+	
+	&:before {
+		font-family: italic;
+		content: "\201C";
+	}
+			
+	&:after {
+		font-family: italic;
+		content: "\201D";
+	}
+	
+	@media screen and (min-width: 48em) {
+		
+		 &:before, 
+		 &:after {
+		 	font-size: 3em;
+		 	padding-left: 20%;
+		 }
+	}
 }
 
 .site-header {
-	position: fixed;
-	background: #eee;
+	background: #fff;
 	width: 100%;
 	z-index: 999;
+	padding: 1em;
 	
 	.site-branding {
 		max-width: 200px;
@@ -27,25 +98,23 @@ body {
 		position: static;
 		
 		.site-branding {
-			max-width: 400px;
+			height: 5rem;
+			float: left;
 		}
 	}
-}
-
-blockquote, q {
-	quotes: "" "";
-
-	&:before,
-	&:after {
-		content: "";
+	
+	.search-toggle,
+	.search-form {
+		display: none;
 	}
 }
 
 hr {
-	background-color: $color__background-hr;
-	border: 0;
-	height: 1px;
-	margin-bottom: 1.5em;
+	box-shadow: 0 1px 0 #d3c799, 0 4px 0 #fff, 0 6px 0 #d3c799, 0 9px 0 #fff, 0 10px 0 #d3c799;
+	border: none;
+	height: 5px;
+	background-color: #fff;
+	margin: 2em 0 2.5em;
 }
 
 @import "lists";
