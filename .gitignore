@@ -3,5 +3,6 @@ vendor/
 !vendor/.htaccess
 
 *.map
+.DS_Store
 
 .wp-env.override.json
