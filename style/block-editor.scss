@@ -41,14 +41,12 @@
 }
 
 /**
-*	Typography
+*	Typography / Elements
 */
 
 .wp-block-button__link,
 .wp-block-svbk-hero__link,
 .wp-block-svbk-card__link {
-    background: #333;
-    color: #fff;
     border-radius: $border-radius__button;
     padding: 10px 30px;
     text-align: center;
@@ -64,6 +62,16 @@
 
 .block-library-button__inline-link {
     outline: 1px solid #eee;
+}
+
+.wp-block-button {
+
+    &.is-style-outline {
+
+        .wp-block-button__link {
+            background: none !important;
+        }
+    }
 }
 
 /**

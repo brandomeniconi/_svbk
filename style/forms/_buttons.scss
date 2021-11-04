@@ -12,9 +12,6 @@ input[type="submit"],
 .readmore {
 	border-width: 2px;
 	border-style: solid;
-	border-color: $color__border-button;
-	background: $color__background-button;
-	color: $color__text-button;
 	@include font-size(1);
 	text-transform: uppercase;
 	line-height: 1;
@@ -29,6 +26,35 @@ input[type="submit"],
 				color .15s ease-in-out,
 				box-shadow .15s ease-in-out;
 
+	&:hover {
+		box-shadow: 0 2px 4px rgba(0,0,0,0.35);
+	}
+
+	&:focus,
+	&:active {
+		outline: none;
+		box-shadow: 0 0 2px rgba(0,0,0,0.4);
+	}
+
+	&:disabled {
+		opacity: .5;
+	}
+}
+
+button,
+.button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"],
+.loadmore__button,
+.wp-block-svbk-card__link,
+.wp-block-svbk-hero__link,
+.more-link,
+.readmore {
+	border-color: $color__border-button;
+	background: $color__background-button;
+	color: $color__text-button;
+
 	&:visited {
 		border-color: $color__border-button;
 		color: $color__text-button;
@@ -37,7 +63,6 @@ input[type="submit"],
 	&:hover {
 		background: $color__background-button-hover;
 		border-color: $color__border-button-hover;
-		box-shadow: 0 2px 4px rgba(0,0,0,0.35);
 		color: $color__text-button;
 	}
 
@@ -45,13 +70,7 @@ input[type="submit"],
 	&:active {
 		border-color: $color__border-button-focus;
 		background: $color__background-button-focus;
-		outline: none;
-		box-shadow: 0 0 2px rgba(0,0,0,0.4);
 		color: $color__text-button;
-	}
-
-	&:disabled {
-		opacity: .5;
 	}
 }
 
@@ -60,47 +79,37 @@ input[type="submit"],
 
 	@each $name, $value in $colors {
 
+		.wp-block-button:not(.is-style-outline):not(.is-style-text-button) & {
+
+			&.has-#{$name}-background-color {
+				background: $value;
+	
+				&:hover {
+					background: lighten( $value, 10% );
+				}
+	
+				&:focus,
+				&:active {
+					background: darken( $value, 5% );
+				}
+			}
+		}
+
 		&.has-#{$name}-background-color {
-			background: $value;
 			border-color: $value;
 
 			&:hover {
-				background: lighten( $value, 10% );
 				border-color: lighten( $value, 10% );
 			}
 
 			&:focus,
 			&:active {
-				background: darken( $value, 5% );
 				border-color: darken( $value, 5% );
 			}
 		}
 
 		&.has-#{$name}-color {
 			color: $value;
-		}
-	}
-
-	&.has-gradient-background-color {
-		border: none;
-		transition: background .15s ease-in-out,
-		color .15s ease-in-out,
-		opacity .15s ease-in-out,
-		box-shadow .15s ease-in-out;
-
-		&:hover,
-		&:focus,
-		&:active {
-			background-image: $color__background-gradient;
-		}
-
-		&:hover {
-			opacity: .8;
-		}
-
-		&:focus,
-		&:active {
-			opacity: .9;
 		}
 	}
 }
@@ -118,20 +127,6 @@ input[type="submit"],
 .more-link,
 .readmore {
 	background: rgba(255,255,255,0) !important;
-	color: $color__border-button;
-
-	&:visited {
-		color: $color__border-button;
-	}
-
-	&:hover {
-		color: $color__border-button-hover;
-	}
-
-	&:focus,
-	&:active {
-		color: $color__border-button-focus;
-	}
 }
 
 .is-style-outline,
@@ -156,6 +151,7 @@ input[type="submit"],
 	}
 }
 
+//Outline Buttons
 .is-style-outline .wp-block-button__link,
 .wp-block-svbk-hero__button--secondary a,
 .wp-block-svbk-collapse__button,
@@ -163,19 +159,10 @@ input[type="submit"],
 .loadmore__button {
 	box-shadow: 0 0 0 1px transparent;
 
-	&:hover {
-		box-shadow: 0 0 0 1px $color__border-button-hover;
-	}
-
-	&:focus,
-	&:active {
-		color: $color__border-button-focus;
-		box-shadow: 0 0 0 1px $color__border-button-focus;
-	}
-
 	@each $name, $value in $colors {
 
-		&.has-#{$name}-color {
+		.has-#{$name}-background-color {
+			border-color: $value;
 
 			&:hover {
 				border-color: lighten( $value, 10% );
@@ -191,6 +178,7 @@ input[type="submit"],
 	}
 }
 
+//Text Style Buttons
 .is-style-text-button .wp-block-button__link,
 .testimonial .wp-block-button__link,
 .is-style-phone .wp-block-button__link,
