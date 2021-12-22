@@ -23,7 +23,7 @@
         "silverback/wp-helpers": "^5.4.0"
     },
     "require-dev": {
-        "wp-coding-standards/wpcs": "^1.2",
+        "wp-coding-standards/wpcs": "^2.3.0",
         "dealerdirect/phpcodesniffer-composer-installer": "^0.7.1",
         "phpcompatibility/php-compatibility": "^9.3.5"
     },
