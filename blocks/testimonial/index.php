@@ -22,7 +22,7 @@ function _svbk_register_testimonials_blocks() {
 	);
 
 }
-add_filter( 'block_editor_settings', '_svbk_rating_templates' );
+add_filter( 'block_editor_settings_all', '_svbk_rating_templates' );
 
 
 
